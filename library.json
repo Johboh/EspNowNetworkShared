@@ -23,7 +23,7 @@
     {
       "name": "Arduino",
       "base": "examples/arduino",
-      "files": ["Host.ino"]
+      "files": ["arduino.ino"]
     },
     {
       "name": "ESP-IDF",
