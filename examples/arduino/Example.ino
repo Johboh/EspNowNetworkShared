@@ -1,6 +1,5 @@
+#include <Arduino.h>
 #include <EspNowCrypt.h>
-#include <freertos/FreeRTOS.h>
-#include <freertos/task.h>
 
 // Encyption key used for our own packet encryption (GCM).
 // We are not using the esp-now encryption due to the peer limitation.
@@ -13,8 +12,6 @@ const char esp_now_encryption_secret[] = "01234567"; // Must be exact 8 bytes lo
 
 EspNowCrypt _esp_now_crypt(esp_now_encryption_key, esp_now_encryption_secret);
 
-extern "C" {
-void app_main();
-}
+void setup() {}
 
-void app_main(void) {}
+void loop() {}

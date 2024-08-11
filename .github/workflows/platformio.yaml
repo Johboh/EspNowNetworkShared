@@ -16,21 +16,9 @@ jobs:
     strategy:
       matrix:
         target:
-          - path: examples/arduino/host
-            library: EspNowNetworkHost/library.json
-            remove: "src/node src/host_driver"
-            extra_dependencies: ""
-          - path: examples/arduino/node
-            library: EspNowNetworkNode/library.json
-            remove: "src/host src/host_driver"
-            extra_dependencies: ""
-          - path: examples/arduino/host_driver
-            library: EspNowNetworkHostDriver/library.json
-            remove: "src/node"
-            extra_dependencies: "johboh/MQTTRemote@^4.0.1, johboh/ConnectionHelper@^2.0.3"
-          - path: integration/arduino
-            library: ./library.json
-            remove: "src/host_driver"
+          - path: examples/arduino
+            library: library.json
+            remove: ""
             extra_dependencies: ""
 
     steps:
