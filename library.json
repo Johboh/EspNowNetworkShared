@@ -22,12 +22,12 @@
   "examples": [
     {
       "name": "Arduino",
-      "base": "examples/arduino",
-      "files": ["arduino.ino"]
+      "base": "examples/arduino/integration",
+      "files": ["integration.ino"]
     },
     {
       "name": "ESP-IDF",
-      "base": "examples/espidf/main",
+      "base": "examples/espidf/integration/main",
       "files": ["main.cpp"]
     }
   ],
