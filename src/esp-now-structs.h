@@ -11,6 +11,7 @@
 #define MESSAGE_ID_CHALLENGE_REQUEST_V1 0xDA
 #define MESSAGE_ID_CHALLENGE_RESPONSE_V1 0xDB
 #define MESSAGE_ID_CHALLENGE_FIRMWARE_RESPONSE_V1 0xDC
+#define MESSAGE_ID_CHALLENGE_PAYLOAD_RESPONSE_V1 0xDD
 
 // Handle all structures like protobuf, e.g. cannot remove fields and new fields should be added last.
 
@@ -76,6 +77,19 @@ struct EspNowChallengeFirmwareResponseV1 {
   char url[96];                 // url where to find firmware binary. Note the max file path.
   char md5[32];                 // MD5 hash of firmware. Does not include trailing \0
   uint32_t header_challenge;    // Should be set in [EspNowMessageHeaderV1].
+};
+
+/**
+ * Sent by host in reply to a [EspNowChallengeRequestV1].
+ * The challenge can only be used once.
+ * This message allows for the host to provide additional application specific payload.
+ */
+struct EspNowChallengePayloadResponseV1 {
+  uint8_t id = MESSAGE_ID_CHALLENGE_PAYLOAD_RESPONSE_V1;
+  uint32_t challenge_challenge; // Challenge from [EspNowChallengeRequestV1].
+  uint32_t header_challenge;    // Should be set in [EspNowMessageHeaderV1].
+  uint8_t payload_size = 0;
+  // Following this is the payload itself. A maxium payload of 200 bytes is allowed.
 };
 
 #pragma pack(0)
