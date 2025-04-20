@@ -78,6 +78,7 @@ struct EspNowChallengeFirmwareResponseV1 {
   char url[96];                 // url where to find firmware binary. Note the max file path.
   char md5[32];                 // MD5 hash of firmware. Does not include trailing \0
   uint32_t header_challenge;    // Should be set in [EspNowMessageHeaderV1].
+  uint64_t timestamp;           // unix timestamp in seconds, UTC.
 };
 
 /**
