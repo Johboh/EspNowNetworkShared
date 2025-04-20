@@ -64,7 +64,7 @@ struct EspNowChallengeResponseV1 {
   uint8_t id = MESSAGE_ID_CHALLENGE_RESPONSE_V1;
   uint32_t challenge_challenge; // Challenge from [EspNowChallengeRequestV1].
   uint32_t header_challenge;    // Should be set in [EspNowMessageHeaderV1].
-  uint64_t timestamp;           // unix timestamp in seconds. UTC or local time, depending on host.
+  uint64_t timestamp;           // unix timestamp in seconds, UTC.
 };
 
 /**
@@ -89,7 +89,7 @@ struct EspNowChallengePayloadResponseV1 {
   uint8_t id = MESSAGE_ID_CHALLENGE_PAYLOAD_RESPONSE_V1;
   uint32_t challenge_challenge; // Challenge from [EspNowChallengeRequestV1].
   uint32_t header_challenge;    // Should be set in [EspNowMessageHeaderV1].
-  uint64_t timestamp;           // unix timestamp in seconds. UTC or local time, depending on host.
+  uint64_t timestamp;           // unix timestamp in seconds, UTC.
   uint8_t payload_size = 0;
   // Following this is the payload itself. A maxium payload of 200 bytes is allowed.
 };
