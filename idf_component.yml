@@ -1,5 +1,6 @@
 version: "1.0.4"
 description: Shared code for the EspNowNetwork, see https://github.com/Johboh/EspNowNetwork for more details.
 url: https://github.com/Johboh/EspNowNetworkShared
+license: "GPL-3.0-or-later"
 dependencies:
   idf: ">=4.4"
